@@ -17,4 +17,5 @@ jobs:
         run: echo '::error::"error message" on src/test.php(3,1)'
       - name: Log debug
         run: echo '::debug::"debug message" on src/test.php(3,1)'
-      - run: exit 1
+      - name: echo stderr
+        run: echo '"stderr" on src/test.php(3,1)' 1>&2
