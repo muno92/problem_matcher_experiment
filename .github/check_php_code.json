@@ -1,0 +1,16 @@
+{
+    "problemMatcher": [
+        {
+            "owner": "check_php_code",
+            "pattern": [
+                {
+                    "regexp": "\"([^\"]+)\" on ([^(]+)\\((\\d+),(\\d+)\\)",
+                    "message": 1,
+                    "file": 2,
+                    "line": 3,
+                    "column": 4
+                }
+            ]
+        }
+    ]
+}
