@@ -10,10 +10,10 @@ jobs:
       - name: Log info
         run: echo '"info message" on src/test.php(3,1)'
       - name: Log warning
-        run: echo '"not warning message" on src/test.php(3,1)'
+        run: echo '::warning file=src/test.php,line=3,col=1::"warning message" on src/test.php(3,1)'
       - name: Log error
-        run: echo '::error::"error message" on src/test.php(3,1)'
+        run: echo '::error file=src/test.php,line=3,col=1::"error message" on src/test.php(3,1)'
       - name: Log debug
-        run: echo '::debug::"debug message" on src/test.php(3,1)'
+        run: echo '::debug file=src/test.php,line=3,col=1::"debug message" on src/test.php(3,1)'
       - name: echo stderr
         run: echo '"stderr" on src/test.php(3,1)' 1>&2
