@@ -8,6 +8,8 @@ jobs:
       - name: Set Output Format
         run: echo "::add-matcher::.github/check_php_code.json"
       - name: Log info
-        run: echo '"info message" on src/test.php(3,1)'
+        run: echo '::info::"info message" on src/test.php(3,1)'
+      - name: Log Notice
+        run: echo '::notice::"notice message" on src/test.php(3,1)'
       - name: Log warning
         run: echo '::warning::"warning message" on src/test.php(3,1)'
