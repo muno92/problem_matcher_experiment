@@ -7,9 +7,17 @@ jobs:
       - uses: actions/checkout@v2
       - name: Set Output Format
         run: echo "::add-matcher::.github/check_php_code.json"
+      - name: Log notice
+        run: echo '::notice file=src/test.php,line=3,col=1::"notice message" on src/test.php(3,1)'
       - name: Log info
         run: echo '::info::"info message" on src/test.php(3,1)'
       - name: Log Notice
         run: echo '::notice::"notice message" on src/test.php(3,1)'
       - name: Log warning
-        run: echo '::warning::"warning message" on src/test.php(3,1)'
+        run: echo '::warning file=src/test.php,line=3,col=1::"warning message" on src/test.php(3,1)'
+      - name: Log error
+        run: echo '::error file=src/test.php,line=3,col=1::"error message" on src/test.php(3,1)'
+      - name: Log debug
+        run: echo '::debug file=src/test.php,line=3,col=1::"debug message" on src/test.php(3,1)'
+      - name: echo stderr
+        run: echo '"stderr" on src/test.php(3,1)' 1>&2
